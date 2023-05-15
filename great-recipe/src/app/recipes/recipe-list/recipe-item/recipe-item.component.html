@@ -1,1 +1,9 @@
-<p>recipe-item works!</p>
+<div class="col">
+  <div href="#" class="list-group-item clearfix" class="card" (click)="onSelected()">
+    <img src="{{recipe.imagePath}}" class="card-img-top " alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{recipe.name}}</h5>
+      <p class="card-text">{{recipe.description}}</p>
+    </div>
+  </div>
+</div>
