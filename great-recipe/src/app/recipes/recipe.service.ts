@@ -13,7 +13,7 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
   private  recipes: Recipe[] = [
-    new Recipe('Burger King',
+    new Recipe( 'Burger King',
       'this is simply Description',
       'https://scontent.fist6-3.fna.fbcdn.net/v/t1.6435-9/79264575_565105814055920_5711876113597202432_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=9267fe&_nc_ohc=12A64qpXg5IAX_maGtq&_nc_ht=scontent.fist6-3.fna&oh=00_AfBd51fz4NVoEEWDn1vr8BdahXCFVAgcEPyxw_rk4qNPWA&oe=64896A1F'
       ,[new Ingredient('meat' , 1), new Ingredient('cheese' , 1)]
@@ -22,13 +22,19 @@ export class RecipeService {
     [new Ingredient('meat' , 2), new Ingredient('cheese' , 2) , new Ingredient('Potato' , 2)]),
   ];
 
+    constructor(private shoppingService:ShoppingListService) { }
+
+
   getRecipe() {
     return this.recipes.slice();
+  }
+  getRecipeById(index: number) {
+     return this.recipes[index];
   }
 
   AddIngredientToShopping(ingredients:Ingredient[]) {
   this.shoppingService.addIngrediants(ingredients)
   }
 
-  constructor(private shoppingService:ShoppingListService) { }
 }
+

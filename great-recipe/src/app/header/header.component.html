@@ -7,11 +7,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" (click)="onSelect('recipe')" href="#">Recipes</a>
+        <li class="nav-item  " routerLinkActive="active" >
+          <a class="nav-link " aria-current="page"  routerLink="recipes" >Recipes</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" (click)="onSelect('shopping-list')" href="#">Shopping List</a>
+        <li class="nav-item outline-success" routerLinkActive="active" >
+          <a class="nav-link " aria-current="page" routerLink="shoping-list" >Shopping List</a>
         </li>
 
       </ul>
@@ -20,9 +20,9 @@
                 Dropdown button
               </button>
               <ul class="dropdown-menu  "  >
-                <li><a class="dropdown-item " href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item " style="cursor: pointer;">Action</a></li>
+                <li><a class="dropdown-item" style="cursor: pointer;">Another action</a></li>
+                <li><a class="dropdown-item" style="cursor: pointer;">Something else here</a></li>
               </ul>
             </div>
       </div>
