@@ -17,7 +17,10 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './auth/auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner/loading-spinner.component';
+import { AuthInterceptorService } from './auth/auth/auth-interceptor.service';
 
 
 
@@ -34,6 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     DropdownToggleDirective,
     RecipeStartComponent,
     RecipeEditComponent,
+    AuthComponent,
+    LoadingSpinnerComponent,
 
   ],
   imports: [
@@ -43,7 +48,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [ShoppingListService , RecipeService],
+  providers: [ShoppingListService , RecipeService , {provide : HTTP_INTERCEPTORS , useClass : AuthInterceptorService , multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
